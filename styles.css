@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18pt;
+}
+
+:root {
+    --background-color: hsl(27, 66%, 92%);
+    --card-background-cream: hsl(33, 100%, 98%);
+    --primary-red:  hsl(10, 79%, 65%);
+    --primary-cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+
+    --body-font-size: 18pt;
+    --border-radius: 0.3rem;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+section {
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.container {
+    width: min(100% - 1rem, 18rem); /* chooses the smaller of the 2 */
+    margin-inline: auto; /* good for different sites where maybe the language isn't LTR */
+   min-height: 100px;
+
+}
+
+.balance {
+    background-color: var(--primary-red);
+    color: var(--card-background-cream);
+    border-radius: var(--border-radius);
+}
+
+.chart-area {
+    background-color: var(--card-background-cream);
+    border-radius: var(--border-radius);
+}
