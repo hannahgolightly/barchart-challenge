@@ -51,6 +51,8 @@ section {
     grid-template-columns: repeat(7, calc((100% - 3rem) / 7));
     gap: 0.5rem;
     margin-top: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--background-color);
 }
 
 .bar {
@@ -62,7 +64,15 @@ section {
 }
 
 .chart p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     text-align: center;
     color: var(--medium-brown);
+    margin-top: 0.4rem;
+}
+
+.totals {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
 }

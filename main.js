@@ -5,6 +5,7 @@ const scale = 2;
 console.log(highest)
 
 const chart = document.querySelector('.chart');
+let totalAmount = 0;
 //for each day loop over and create a div, append to the parent chart
 data.map(date => {
     const bar = document.createElement('div');
@@ -20,4 +21,10 @@ data.map(date => {
     if (date.amount === highest) {
         amount.style.backgroundColor = "hsl(186, 34%, 60%)";
     }
+
+    totalAmount += parseFloat(date.amount);
+    return totalAmount;
 })
+
+const total = document.querySelector('.total');
+total.textContent = `$${totalAmount}`;
