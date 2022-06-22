@@ -16,7 +16,7 @@ data.map(date => {
     chart.appendChild(bar)
     day.textContent = date.day;
     const barHeight = date.amount * scale;
-    amount.style.height = barHeight;
+    amount.style.height = `${barHeight}px`;
     amount.classList.add('bar');
     if (date.amount === highest) {
         amount.style.backgroundColor = "hsl(186, 34%, 60%)";
