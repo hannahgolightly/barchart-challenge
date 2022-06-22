@@ -43,7 +43,7 @@ h2 {
 }
 
 .container {
-    width: min(100% - 1rem, 20rem); /* chooses the smaller of the 2 */
+    width: min(100% - 1rem, 28rem); /* chooses the smaller of the 2 */
     margin-inline: auto; /* good for different sites where maybe the language isn't LTR */
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -69,15 +69,15 @@ h2 {
 
 .chart {
     display: grid;
-    grid-template-columns: repeat(7, calc((100% - 3rem) / 7));
-    gap: 0.5rem;
+    grid-template-columns: repeat(7, calc((100% - 0.18rem) / 7));
+    /* gap: 0.5rem; */
     margin-top: 3rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--background-color);
 }
 
 .chart div {
-    align-self: baseline;
+    align-self: end;
 }
 
 .bar {
@@ -85,14 +85,39 @@ h2 {
     background-color: var(--primary-red);
     min-height: 40px;
     border-radius: 0.2rem;
+    margin: 0.3rem 0.4rem;
+    cursor: pointer;
 }
+
+.bar-area:hover > .bar {
+    filter: brightness(120%);
+    transition: filter 0.2s;
+}
+
+.bar-area:hover > .amount {
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
 
 .chart p {
     font-size: var(--font-size-xsm);
     text-align: center;
     color: var(--medium-brown);
-    margin-top: 0.4rem;
 }
+
+.amount {
+    background-color: var(--dark-brown);
+    margin-bottom: 0.4rem;
+    border-radius: 0.2rem;
+    color: var(--card-background-cream);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-align: center;
+    padding: 0.3rem;
+    opacity: 0;
+}
+
 
 .totals {
     display: flex;
@@ -130,5 +155,14 @@ h2 {
     .total {
         font-weight: 700;
         font-size: var(--font-size-lg);
+    }
+
+    .bar {
+        margin: 0.4rem 0.3rem;
+    }
+
+    .amount {
+        font-size: var(--font-size-xsm);
+        padding: 0.2rem 0.1rem;
     }
   }

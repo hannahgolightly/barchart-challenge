@@ -8,18 +8,23 @@ const chart = document.querySelector('.chart');
 let totalAmount = 0;
 //for each day loop over and create a div, append to the parent chart
 data.map(date => {
-    const bar = document.createElement('div');
+    const barArea = document.createElement('div');
+    barArea.setAttribute('class', 'bar-area');
     const day = document.createElement('p');
+    const bar = document.createElement('div');
     const amount = document.createElement('div');
-    bar.appendChild(amount)
-    bar.appendChild(day)
-    chart.appendChild(bar)
+    amount.setAttribute('class', 'amount');
+    barArea.appendChild(amount)
+    barArea.appendChild(bar)
+    barArea.appendChild(day)
+    chart.appendChild(barArea)
+    amount.textContent = `$${date.amount}`;
     day.textContent = date.day;
     const barHeight = date.amount * scale;
-    amount.style.height = `${barHeight}px`;
-    amount.classList.add('bar');
+    bar.style.height = `${barHeight}px`;
+    bar.classList.add('bar');
     if (date.amount === highest) {
-        amount.style.backgroundColor = "hsl(186, 34%, 60%)";
+        bar.style.backgroundColor = "hsl(186, 34%, 60%)";
     }
 
     totalAmount += parseFloat(date.amount);
