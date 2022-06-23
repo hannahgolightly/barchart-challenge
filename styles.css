@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+    --font-size-xsm: 0.6875rem;   /* 11px */
+    --font-size-sm: 0.8125rem;   /* 13px */
+    --font-size-base: 1.125rem;    /* 18px, base */
+    --font-size-md: 1.25rem;   /* 20px */
+    --font-size-lg: 1.5rem;    /* 24px */
+    --font-size-xl: 1.75rem;   /* 28px */
+}
+
+:root {
+    --background-color: hsl(27, 66%, 92%);
+    --card-background-cream: hsl(33, 100%, 98%);
+    --primary-red:  hsl(10, 79%, 65%);
+    --primary-cyan: hsl(186, 34%, 60%);
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --border-radius: 0.6rem;
+    font-size: var(--font-size-base);
+    color: var(--dark-brown);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+section {
+    margin: 0.5rem;
+    padding: 1.2rem;
+}
+
+h1 {
+    font-size: var(--font-size-md);
+}
+
+h2 {
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+}
+
+.container {
+    width: min(100% - 1rem, 28rem); /* chooses the smaller of the 2 */
+    margin-inline: auto; /* good for different sites where maybe the language isn't LTR */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.balance {
+    background-color: var(--primary-red);
+    color: var(--card-background-cream);
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance p {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+}
+
+.chart-area {
+    background-color: var(--card-background-cream);
+    border-radius: var(--border-radius);
+}
+
+.chart {
+    display: grid;
+    grid-template-columns: repeat(7, calc((100% - 0.18rem) / 7));
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--background-color);
+}
+
+.chart div {
+    align-self: end;
+}
+
+.bar {
+    align-items: center;
+    background-color: var(--primary-red);
+    min-height: 40px;
+    border-radius: 0.2rem;
+    margin: 0.3rem 0.4rem;
+    cursor: pointer;
+}
+
+.bar-area:hover > .bar {
+    filter: brightness(120%);
+    transition: filter 0.2s;
+}
+
+.bar-area:hover > .amount {
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+
+.chart p {
+    font-size: var(--font-size-xsm);
+    text-align: center;
+    color: var(--medium-brown);
+}
+
+.amount {
+    background-color: var(--dark-brown);
+    margin-bottom: 0.4rem;
+    border-radius: 0.2rem;
+    color: var(--card-background-cream);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    text-align: center;
+    padding: 0.3rem;
+    opacity: 0;
+}
+
+
+.totals {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.totals h2 {
+    color: var(--medium-brown);
+}
+
+.total {
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+}
+
+.last-month {
+    text-align: end;
+    font-size: var(--font-size-sm);
+    color: var(--medium-brown);
+}
+
+.amount-change {
+    font-weight: 700;
+    color: var(--dark-brown);
+}
+
+@media only screen and (max-width: 480px) {
+    section {
+        padding: 1rem;
+    }
+
+    .total {
+        font-weight: 700;
+        font-size: var(--font-size-lg);
+    }
+
+    .bar {
+        margin: 0.4rem 0.3rem;
+    }
+
+    .amount {
+        font-size: var(--font-size-xsm);
+        padding: 0.2rem 0.1rem;
+    }
+  }
