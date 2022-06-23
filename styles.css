@@ -42,6 +42,7 @@ h2 {
 
 .container {
     width: min(100% - 1rem, 28rem); /* chooses the smaller of the 2 */
+    margin: 0 auto;
     margin-inline: auto; /* good for different sites where maybe the language isn't LTR */
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -113,6 +114,11 @@ h2 {
     text-align: center;
     padding: 0.3rem;
     opacity: 0;
+}
+
+.attribution {
+    font-size: var(--font-size-xsm);
+    text-align: center;
 }
 
 
